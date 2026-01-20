@@ -62,7 +62,7 @@ const Destination = () => {
                         {spaceData.destinations.map((dest, index) => (
                       <button key={dest.name} onClick={() => handlePlanetChange(index)} 
                             className={planetIndex === index ? "active-link" : ""} 
-                            style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', marginRight: '15px', fontFamily: 'Bellefair', fontSize: '17px' }} > {dest.name} 
+                            style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', marginRight: '15px', fontFamily: 'Bellefair', fontSize: '16px' }} > {dest.name} 
                       </button>
                         ))}
                     </div>
