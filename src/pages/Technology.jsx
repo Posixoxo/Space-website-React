@@ -22,18 +22,13 @@ const Technology = () => {
         <h4>SPACE LAUNCH 101</h4>
       </div>
 
-      {/* --- MOBILE STRUCTURE --- */}
       <div className="tech-container mobile-version">
         <div className="tech-image">
           <img src={tech.images.landscape} alt={tech.name} className="tech-x" />
         </div>
         <div className="butt">
           {spaceData.technology.map((_, index) => (
-            <button 
-              key={index} 
-              className={`btn ${techIndex === index ? 'active' : ''}`} 
-              onClick={() => handleTechChange(index)}
-            >
+            <button key={index} className={`btn ${techIndex === index ? 'active' : ''}`} onClick={() => handleTechChange(index)}>
               {index + 1}
             </button>
           ))}
@@ -45,18 +40,13 @@ const Technology = () => {
         </div>
       </div>
 
-      {/* --- TABLET STRUCTURE --- */}
       <div className="tech-container tablet-version">
         <div className="tech-image">
           <img src={tech.images.landscape} alt={tech.name} className="tech-x" />
         </div>
         <div className="butt">
           {spaceData.technology.map((_, index) => (
-            <button 
-              key={index} 
-              className={`btn ${techIndex === index ? 'active' : ''}`} 
-              onClick={() => handleTechChange(index)}
-            >
+            <button key={index} className={`btn ${techIndex === index ? 'active' : ''}`} onClick={() => handleTechChange(index)}>
               {index + 1}
             </button>
           ))}
@@ -68,16 +58,11 @@ const Technology = () => {
         </div>
       </div>
 
-      {/* --- DESKTOP STRUCTURE --- */}
       <div className="desktop-version">
         <div className="flex-butt-tech">
           <div className="butt">
             {spaceData.technology.map((_, index) => (
-              <button 
-                key={index} 
-                className={`btn ${techIndex === index ? 'active' : ''}`} 
-                onClick={() => handleTechChange(index)}
-              >
+              <button key={index} className={`btn ${techIndex === index ? 'active' : ''}`} onClick={() => handleTechChange(index)}>
                 {index + 1}
               </button>
             ))}

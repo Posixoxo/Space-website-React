@@ -24,10 +24,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <Link to="/">
-        <img src="assets/shared/logo.svg" alt="logo" className="logo" />
+        <img src="/assets/shared/logo.svg" alt="logo" className="logo" />
       </Link>
 
-      {/* TABLET VIEW NAVBAR (Visible on tablet, hidden on mobile/desktop) */}
       <div className="tablet-nav tablet-version">
         <div className="tablet-n-contents">
           <NavLink className="menu-item" to="/">Home</NavLink>
@@ -39,7 +38,6 @@ const Navbar = () => {
 
       <div className="navline desktop-version"></div>
 
-      {/* DESKTOP VIEW NAVBAR */}
       <div className="desktop-nav desktop-version" ref={navRef}>
         <div className="desktop-n-contents" style={{ position: 'relative' }}>
           <NavLink className="menu-item" to="/">
@@ -58,10 +56,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE HAMBURGER */}
       <img 
-        src={isMenuOpen ? "assets/shared/icon-close.svg" : "assets/shared/icon-hamburger.svg"} 
-        alt="open" 
+        src={isMenuOpen ? "/assets/shared/icon-close.svg" : "/assets/shared/icon-hamburger.svg"} 
+        alt="menu toggle" 
         className="hamburger mobile-version" 
         onClick={toggleMenu}
       />

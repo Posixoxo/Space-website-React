@@ -6,7 +6,7 @@ const Destination = () => {
     const [isFade, setIsFade] = useState(true);
 
     const handlePlanetChange = (index) => {
-      if (index === planetIndex) return; // Don't trigger if already selected
+      if (index === planetIndex) return; 
       setIsFade(false); 
       setTimeout(() => {
         setPlanetIndex(index);
