@@ -598,8 +598,31 @@ body{
   opacity: 0;
 }
 
+/* Loader Styles */
+.loader {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Barlow Condensed";
+    letter-spacing: 4.7px;
+    font-size: 20px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite;
+}
 
+.loader span {
+    color: grey;
+    margin-right: 15px;
+    font-weight: bold;
+}
 
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
 
 
 .mobile-version{
