@@ -7,7 +7,7 @@ const Destination = () => {
     const [loading, setLoading] = useState(true);
     const [touchStart, setTouchStart] = useState(null);
 
-    // Simulated initial load
+    // Initial Load Effect
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 800);
         return () => clearTimeout(timer);
@@ -27,14 +27,17 @@ const Destination = () => {
     const handleTouchEnd = (e) => {
         if (!touchStart) return;
         const touchEnd = e.changedTouches[0].clientX;
-        if (touchStart - touchEnd > 70) { // Swipe Left (Next)
+        const distance = touchStart - touchEnd;
+
+        if (distance > 70) { // Swipe Left (Next)
             const next = (planetIndex + 1) % spaceData.destinations.length;
             handlePlanetChange(next);
         }
-        if (touchStart - touchEnd < -70) { // Swipe Right (Prev)
+        if (distance < -70) { // Swipe Right (Prev)
             const prev = (planetIndex - 1 + spaceData.destinations.length) % spaceData.destinations.length;
             handlePlanetChange(prev);
         }
+        setTouchStart(null);
     };
 
     const planet = spaceData.destinations[planetIndex];
@@ -60,13 +63,24 @@ const Destination = () => {
                 <div className="planets">
                     <div className="planets-list">
                         {spaceData.destinations.map((dest, index) => (
-                            <button 
+                            <span 
                                 key={dest.name}
                                 onClick={() => handlePlanetChange(index)}
                                 className={planetIndex === index ? "active-link" : ""}
+                                style={{ 
+                                    color: 'white', 
+                                    cursor: 'pointer', 
+                                    marginRight: '35px', 
+                                    fontFamily: 'Barlow Condensed',
+                                    letterSpacing: '2.7px',
+                                    textTransform: 'uppercase',
+                                    fontSize: '17px',
+                                    paddingBottom: '10px',
+                                    display: 'inline-block'
+                                }}
                             >
                                 {dest.name}
-                            </button>
+                            </span>
                         ))}
                     </div>
 
